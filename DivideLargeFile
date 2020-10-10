@@ -28,7 +28,5 @@ for (i, line) in enumerate(fileinput.FileInput(filename)):
         fout = open('output/output%d.csv' % (i/filesize), 'w')
         num_lines = num_lines - filesize
         print(f"Current Filesize = {num_lines} --> Writing {filesize} rows to output{int(i/filesize)}.csv")
-        fout.write("Update_Order,Anchor_DT_TM,Template_Order_id,Update_Child,Active_Children\n") 
-    temp_line = "Yes," + line.rstrip("\n")+ ",DIRECT UPDATE OF CHILD,0\n"
-    fout.write(temp_line)
+    fout.write(line)
 fout.close()
